@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import '@ionic/core/css/core.css';
+import '@ionic/core/css/ionic.bundle.css';
+import {
+  IonApp,
+  IonContent,
+  IonHeader,
+  IonTitle,
+  IonToolbar,
+  IonList,
+  IonItem,
+  IonLabel,
+
+} from '@ionic/react';
+import  DataFetching from './DataFetching';
+
 
 function App() {
+
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <IonApp>
+        <IonHeader>
+          <IonToolbar color="primary">
+            <IonTitle>News App v1.0</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <IonContent>
+          <IonList>
+              <IonItem>
+                <DataFetching/>
+              </IonItem>
+          </IonList>
+        </IonContent>
+    </IonApp>
     </div>
+    
   );
+  
 }
 
 export default App;
