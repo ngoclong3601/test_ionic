@@ -20,12 +20,24 @@ const store = createStore({
     }),
 
     addProduct: action((state,payload)=>{
-        state.products.push(payload)
+        var newProduct = [
+           state.products.name = payload,
+           state.products.price = payload
+        ];
+        state.products.push(newProduct);
     }),
     saveAddProduct: thunk(async(actions, payload) =>{
         const {data} = await axios.post(API_URL, payload);
         actions.addProduct(data);
-    })
+    }),
+
+    removeProduct: action((state,id)=>{
+        state.products = state.products.filter(product => product.id !== id);
+    }) ,
+    deleteProduct: thunk(async (actions,id)=>{
+        const {data} = await axios.delete(API_URL,id);
+        actions.removeProduct(data);
+    }) 
 })
 
 export {store};

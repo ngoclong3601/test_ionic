@@ -23,7 +23,11 @@ import {useStoreState, useStoreActions} from 'easy-peasy';
 
 function App() {
   const products = useStoreState((state )=> state.products);
-  const fetchProduct  = useStoreActions((actions) => actions.fetchProduct);
+  const {fetchProduct, remove}  = useStoreActions((actions) => ({
+    fetchProduct: actions.fetchProduct,
+    remove: actions.deleteProduct
+  
+  }));
   
   const [showModal, setShowModal] = useState(false);
 
@@ -57,12 +61,12 @@ function App() {
       </IonHeader>
       <IonContent>
           {/* <DataFetching/> */}
-          <IonList>
+          <IonList  class="ion-bottom12">
           {
             products.map(item =>{
               return (
-                  <IonItem key={item.id}>
-                      <IonLabel>
+                  <IonItem key={item.id} >
+                      <IonLabel >
                           <h3>{item.name}</h3>
                           <h4>{item.price}</h4>
                       </IonLabel>
@@ -70,8 +74,7 @@ function App() {
               )
             })
           }
-          </IonList>
-       
+          </IonList>   
       </IonContent>
     </IonApp>
      
