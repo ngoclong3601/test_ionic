@@ -1,0 +1,27 @@
+.account{
+    background-image: linear-gradient( to right, #3366CC , #6699FF);
+    text-align: center;
+    color: white;
+    white-space: nowrap;
+    
+   
+}
+.text{
+    padding-top: 5px;
+    font-size: 18px;
+
+}
+.account-detail{
+    margin-top: 10px;
+    border-radius: 50%;
+    background-image: linear-gradient( to right, #3366CC , #6699FF);
+    border: 2px solid white;
+}
+.history-payment{
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    background-color:white;
+    margin-top: 10px;
+    color:black;
+    height:100%;
+}
